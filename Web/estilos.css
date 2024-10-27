@@ -1,101 +1,114 @@
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.padded{
-	padding-top:70px;
-	padding-bottom: 70px;
-}
+
 body {
-	font-family: 'Montserrat', sans-serif;
-	background: rgb(24, 12, 35);
-	color: #fffdfdd0;
+    font-family: 'Montserrat', sans-serif;
+    background: rgb(24, 12, 35);
+    color: #fffdfdd0;
+}
+
+.padded {
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 .contenedor {
-	width: 90%;
-	max-width: 1000px;
-	margin: 40px auto 100px auto;
- 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 40px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 40px;
 }
 
 .contenedor .pelicula {
-	text-align: center;
-
+    text-align: center;
 }
 
 .contenedor .pelicula .titulo {
-	font-size: 16px;
-	font-weight: 600;
+    font-size: 16px;
+    font-weight: 600;
 }
-.pelicula{
-	grid-gap: 30px;
-		 transition: all 300ms;
+
+.pelicula {
+    transition: all 300ms;
 }
 
 .pelicula:hover {
-	transform: scale(1.15);}
+    transform: scale(1.05); /* Slightly less aggressive zoom */
+}
 
 .contenedor .pelicula .poster {
-	width: 100%;
-	margin-bottom: 10px;
-	border-radius: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
 }
 
 .paginacion {
-	position: fixed;
-	bottom: 0;
-	background: #0d081a;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	gap: 20px;
-	padding: 10px;
+    position: fixed;
+    bottom: 0;
+    background: #0d081a;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 }
 
 .paginacion button {
-	cursor: pointer;
-	border: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	height: 50px;
-	width: 200px;
-	background: #241744;
-	color: #fff;
-	border-radius: 100px;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 600;
-	transition: .3s ease all;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 50px;
+    width: 200px; /* Fixed width for buttons */
+    background: #241744;
+    color: #fff;
+    border-radius: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: .3s ease all;
 }
 
 .paginacion button:hover {
-	background: #137c32;
+    background: #137c32; /* Hover effect */
 }
-.inicio{
-	background: #241744;
+
+.inicio {
+    background: #241744; /* Navbar background */
 }
-.logo-img{
-	height: 75px;
-	width: 75px;
-	margin: 0;
-	padding: 0;
-	 
+
+.logo-img {
+    height: 75px; /* Logo size */
 }
-.nav-link{
-	color: white;
-	font-size: 25px;
-	
+
+.nav-link {
+   color: white; 
+   font-size: 25px; 
+   margin-right: 15px; /* Consistent spacing */
 }
-.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
-	color: white;
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+   color: white; 
 }
+
 .navbar-nav .nav-link.active {
-	color: white;
-	font-size: 30px;
-	
+   font-size: 30px; 
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+   .nav-link {
+       font-size: 20px; /* Adjust font size for smaller screens */
+   }
+   
+   .paginacion button {
+       width: auto; /* Allow buttons to resize */
+       flex-grow: 1; /* Make buttons take available space */
+   }
 }
